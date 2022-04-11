@@ -34,7 +34,7 @@
             // 
             // pbCanvas
             // 
-            this.pbCanvas.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pbCanvas.BackColor = System.Drawing.SystemColors.Window;
             this.pbCanvas.Location = new System.Drawing.Point(58, 54);
             this.pbCanvas.Name = "pbCanvas";
             this.pbCanvas.Size = new System.Drawing.Size(100, 50);

@@ -12,23 +12,31 @@ namespace TicTacToeGame
 {
     public partial class GamePanel : Form
     {
+        private GridService _gridService;
+        private Shape[,] _map;
         public GamePanel()
         {
             InitializeComponent();
 
-            this.Size = new Size(1000, 1000); 
+            this.Size = new Size(1000, 1000);
             this.StartPosition = FormStartPosition.CenterParent;
-            this.pbCanvas.Size = this.ClientSize; 
-            this.Location = new Point(0, 0); 
-            var shapeSize = new Size(50, 50); 
+            this.pbCanvas.Size = this.ClientSize;
+            this.pbCanvas.Location = new Point(0, 0);
+            
+            var shapeSize = new Size(50, 50);
 
-            var gridService = new GridService(); 
-            var grid = gridService.CreateGrid(this.pbCanvas.Size, shapeSize);
+            _gridService = new GridService();
+            _map = _gridService.CreateGrid(this.pbCanvas.Size, shapeSize);
 
+            this.pbCanvas.Refresh();
         }
 
         private void pbCanvas_Paint(object sender, PaintEventArgs e)
         {
+            if (_map != null)
+            {
+                _gridService.DrawGrid(e.Graphics, _map);
+            }
         }
     }
 }
