@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PenService.cs" />
+    <Compile Include="ShapeType.cs" />
+    <Compile Include="Triangle.cs" />
+    <Compile Include="Circle.cs" />
+    <Compile Include="Cross.cs" />
     <Compile Include="EmptyField.cs" />
     <Compile Include="GamePanel.cs">
       <SubType>Form</SubType>

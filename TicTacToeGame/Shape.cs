@@ -9,6 +9,7 @@ namespace TicTacToeGame
 {
     abstract class Shape
     {
+        public static readonly Size DefaultSize = new Size(50, 50);
         public Point Location { get; set; }
         public Size Size { get; set; }
         public Rectangle Rectangle
